@@ -1,0 +1,12 @@
+## coding: utf-8
+
+env = Environment()
+
+env.AppendUnique(PDFLATEXFLAGS  = "-interaction=batchmode")
+env.AppendUnique(PDFTEXFLAGS    = "-interaction=batchmode")
+env.AppendUnique(TEXFLAGS       = "-interaction=batchmode")
+env.AppendUnique(LATEXFLAGS     = "-interaction=batchmode")
+env.AppendUnique(BIBTEXFLAGS    = "--terse")  # some ports of BibTeX may use --quiet instead
+
+env.PDF(target = "intro-to-imagej.pdf",
+        source = "intro-to-imagej.tex")
